@@ -1,6 +1,6 @@
 # Gerenciador de Consultas Médicas 🩺
 
-Este projeto é uma aplicação de gerenciamento de consultas médicas, desenvolvida para praticar conceitos de desenvolvimento web full-stack. A aplicação possui funcionalidades específicas para diferentes perfis de usuários, como ADMIN e USER, com permissões ajustadas às necessidades de cada tipo.
+Este projeto é uma aplicação de gerenciamento de consultas médicas, desenvolvida para praticar conceitos de desenvolvimento web em Angular 17. A aplicação possui funcionalidades específicas para diferentes perfis de usuários, como ADMIN e USER, com permissões ajustadas às necessidades de cada tipo.
 
 ## 📌 Funcionalidades
 
