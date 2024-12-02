@@ -1,22 +1,22 @@
 <div class="register-container">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="name" placeholder="Nome completo" />
-        <mat-error *ngIf="registerForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+        <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
       </mat-form-field>
   
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" placeholder="Email" />
-        <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
-        <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Email inválido</mat-error>
+        <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+        <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">Email inválido</mat-error>
       </mat-form-field>
   
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>Senha</mat-label>
         <input matInput formControlName="password" type="password" placeholder="Senha" />
-        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Senha é obrigatória</mat-error>
+        <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">Senha é obrigatória</mat-error>
       </mat-form-field>
   
       <mat-form-field appearance="fill" class="form-field">
@@ -25,10 +25,10 @@
           <mat-option value="admin">ADMIN</mat-option>
           <mat-option value="user">USER</mat-option>
         </mat-select>
-        <mat-error *ngIf="registerForm.get('role')?.hasError('required')">Função é obrigatória</mat-error>
+        <mat-error *ngIf="registrationForm.get('role')?.hasError('required')">Função é obrigatória</mat-error>
       </mat-form-field>
   
-      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Cadastrar</button>
     </form>
   </div>
   
