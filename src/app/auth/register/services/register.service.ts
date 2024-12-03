@@ -7,11 +7,11 @@ import { Register } from '../models/register.model';
   providedIn: 'root'
 })
 export class RegisterService {
-  apiUrl = "http://localhost:3000/auth";
+  // apiUrl = "http://localhost:3000/auth";
 
-  constructor(private http: HttpClient) {}
+  // constructor(private http: HttpClient) {}
 
-  createUser(user: Register): Observable<any> {
-    return this.http.post<void>(`${this.apiUrl}/register`, user);
-  }
+  // createUser(user: Register): Observable<any> {
+  //   return this.http.post<void>(`${this.apiUrl}/register`, user);
+  // }
 }

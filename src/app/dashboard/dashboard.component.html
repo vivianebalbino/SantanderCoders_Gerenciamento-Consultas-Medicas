@@ -1,1 +1,59 @@
-<p>dashboard works!</p>
+<div class="container mt-4">
+    <h2 class="mb-4">Dashboard</h2>
+  
+    <!-- Verificação para evitar erros de carregamento -->
+    <div *ngIf="appointments && appointments.length > 0; else noAppointments">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ appointment.date | date: 'short' }}</td>
+            <td>{{ appointment.description }}</td>
+            <td>
+              <span
+                class="badge"
+                [class.bg-success]="appointment.status === 'DONE'"
+                [class.bg-danger]="appointment.status === 'CANCELED'"
+                [class.bg-warning]="appointment.status === 'SCHEDULED'"
+              >
+                {{ appointment.status }}
+              </span>
+            </td>
+            <td>
+              <button
+                class="btn btn-success btn-sm me-2"
+                (click)="markAsDone(appointment)"
+                [disabled]="appointment.status !== 'SCHEDULED'"
+              >
+                Concluir
+              </button>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="cancelAppointment(appointment)"
+                [disabled]="appointment.status !== 'SCHEDULED'"
+              >
+                Cancelar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Mensagem caso não existam consultas -->
+    <ng-template #noAppointments>
+      <div class="alert alert-info text-center">
+        Nenhuma consulta disponível.
+      </div>
+    </ng-template>
+  </div>
+  
